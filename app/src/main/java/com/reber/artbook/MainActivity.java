@@ -34,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerView.setAdapter(artAdaptor);
 
         getData();
+        //if list is empty, show this textView, if not make this invisible
+        if (artArrayList.isEmpty()){
+            binding.emptyText.setVisibility(View.VISIBLE);
+        }else {
+            binding.emptyText.setVisibility((View.INVISIBLE));
+        }
     }
     private void getData(){
         try{
