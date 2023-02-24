@@ -50,6 +50,10 @@ public class ArtActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String info = intent.getStringExtra("info");
         if (info.equals("new")) {
+            binding.imageView.setClickable(true);
+            binding.yearText.setFocusable(true);
+            binding.nameText.setFocusable(true);
+            binding.artistText.setFocusable(true);
             binding.deleteButton.setVisibility(View.GONE);
             //add new data
             binding.nameText.setText("");
@@ -58,6 +62,10 @@ public class ArtActivity extends AppCompatActivity {
             binding.saveButton.setVisibility(View.VISIBLE);
             binding.imageView.setImageResource(R.drawable.selectimage);
         } else {
+            binding.imageView.setClickable(false);
+            binding.yearText.setFocusable(false);
+            binding.nameText.setFocusable(false);
+            binding.artistText.setFocusable(false);
             binding.deleteButton.setVisibility(View.VISIBLE);
             artId = intent.getIntExtra("artId", 0);
             binding.saveButton.setVisibility(View.INVISIBLE);
