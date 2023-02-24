@@ -222,6 +222,8 @@ public class ArtActivity extends AppCompatActivity {
                 if (result) {
                     //permission granted
                     //go to gallery
+                    Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    activityResultLauncher.launch(galleryIntent);
 
                 } else {
                     //denied
